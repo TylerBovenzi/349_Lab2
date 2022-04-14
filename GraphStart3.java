@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Collections;
 
-class GraphStart3  {	
+class GraphStart3  {
 	ArrayList<Vertex> vertices = new ArrayList<Vertex>();
-   boolean directed; 
-   int nvertices;
-   int nedges; 
-   int numComp;
+	boolean directed;
+    int nvertices;
+    int nedges;
+    int numComp;
 	
    public GraphStart3(){
    }
@@ -32,10 +32,10 @@ class GraphStart3  {
 		nedges = sc.nextInt();   // m is the number of edges in the file
       int nedgesFile = nedges;
 		for (int i=1; i<=nedgesFile ;i++)	{
-			// System.out.println(i + " compare " + (i<=nedges) + " nedges " + nedges);
+				//System.out.println(i + " compare " + (i<=nedges) + " nedges " + nedges);
          x=sc.nextInt();
 			y=sc.nextInt();
-         //  System.out.println("x  " + x + "  y:  " + y  + " i " + i);
+           		//System.out.println("x  " + x + "  y:  " + y  + " i " + i);
 			insert_edge(x,y,directed);
 		}  
 		   // order edges to make it easier to see what is going on
@@ -104,6 +104,7 @@ class GraphStart3  {
 	void print_graph()	{
 		for(Vertex v : vertices)	{
 			System.out.println("vertex: "  + v.key);
+			System.out.println("deg: "  + v.degree);
 			for(Vertex w : v.edges)
 				System.out.print("  adjacency list: " + w.key);
 			System.out.println();
